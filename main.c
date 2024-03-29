@@ -270,7 +270,7 @@ MemResult system_init(System *system) {
 
 MemResult system_realloc(System *system) {
   size_t new_capacity = system->capacity * 2;
-  Body *bodies = realloc(system->bodies, new_capacity * sizeof(Body *));
+  Body *bodies = realloc(system->bodies, new_capacity * sizeof(Body));
   if (bodies == NULL) {
     printf("ERROR: Could not re-allocate memory for system\n");
     return NOT_ENOUGH_MEMORY;
